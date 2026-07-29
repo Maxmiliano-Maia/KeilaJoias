@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1">
+
+<title>Produto</title>
+
+<link rel="stylesheet"
+href="css/produto.css">
+
+</head>
+
+<body>
+
+<header class="topo">
+
+<h1>
+
+KEILA
+
+<span>
+
+Fine Jewelry
+
+</span>
+
+</h1>
+
+</header>
+
+<main class="produto">
+
+<section class="galeria">
+
+<img
+id="fotoPrincipal"
+class="principal">
+
+<div
+id="miniaturas"
+class="miniaturas">
+
+</div>
+
+</section>
+
+<section class="informacoes">
+
+<h2 id="nome"></h2>
+
+<p id="sku"></p>
+
+<div id="avaliacao">
+
+★★★★★
+
+(28 avaliações)
+
+</div>
+
+<div class="preco">
+
+<small id="precoAntigo"></small>
+
+<h1 id="precoAtual"></h1>
+
+
+<div class="frete">
+
+<h3>Calcular Frete</h3>
+
+<div class="cep-box">
+
+<input
+type="text"
+id="cep"
+placeholder="Digite seu CEP"
+maxlength="9">
+
+<button id="calcularFrete">
+
+Calcular
+
+</button>
+
+</div>
+
+<div id="resultadoFrete"></div>
+
+</div>
+
+
+</div>
+
+<p id="pix"></p>
+
+<p id="parcelas"></p>
+
+<div class="acoes">
+
+<div class="comprar-box">
+
+<label>
+
+Quantidade
+
+</label>
+
+<input
+type="number"
+id="quantidade"
+value="1"
+min="1">
+
+<button id="comprar">
+
+Adicionar ao Carrinho
+
+</button>
+
+</div>
+
+<button id="favorito">
+
+❤ Favoritar
+
+</button>
+
+</div>
+
+<h3>
+
+Descrição
+
+</h3>
+
+<p id="descricao"></p>
+
+<h3>
+
+Especificações
+
+</h3>
+
+<ul>
+
+<li id="material"></li>
+
+<li id="peso"></li>
+
+<li id="teor"></li>
+
+<li id="estoque"></li>
+
+</ul>
+
+</section>
+
+</main>
+
+<section>
+
+<h2>
+
+Produtos Relacionados
+
+</h2>
+
+<div
+id="relacionados">
+
+</div>
+
+</section>
+
+<script src="js/database.js"></script>
+<script src="js/api.js"></script>
+<script src="js/produto.js"></script>
+
+</body>
+
+</html>
