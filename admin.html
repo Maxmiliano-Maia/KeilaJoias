@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Painel Administrativo</title>
+
+<link rel="stylesheet" href="css/admin.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>💎 Painel da Keila</h1>
+
+</header>
+
+<main>
+
+<div class="card">
+
+<h2>Nova Joia</h2>
+
+<form id="produtoForm">
+
+<input
+type="text"
+id="nome"
+placeholder="Nome da Joia"
+required>
+
+<input
+type="number"
+id="preco"
+placeholder="Preço"
+required>
+
+<input
+type="number"
+id="estoque"
+placeholder="Estoque"
+required>
+
+<select id="categoria">
+
+<option>Anéis</option>
+
+<option>Brincos</option>
+
+<option>Pulseiras</option>
+
+<option>Correntes</option>
+
+<option>Pingentes</option>
+
+</select>
+
+<textarea
+id="descricao"
+placeholder="Descrição"></textarea>
+
+<input
+type="file"
+id="foto"
+accept="image/*">
+
+<button>
+
+Cadastrar
+
+</button>
+
+</form>
+
+</div>
+
+<div class="card">
+
+<h2>Joias Cadastradas</h2>
+
+<div id="listaProdutos"></div>
+
+</div>
+
+</main>
+
+<script src="js/admin.js"></script>
+
+</body>
+</html>
