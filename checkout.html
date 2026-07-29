@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Checkout | Keila Joias</title>
+
+<link rel="stylesheet" href="css/checkout.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Finalizar Compra</h1>
+
+</header>
+
+<main>
+
+<div class="dados">
+
+<h2>Dados do Cliente</h2>
+
+<input id="nome" placeholder="Nome Completo">
+
+<input id="telefone" placeholder="WhatsApp">
+
+<input id="email" placeholder="E-mail">
+
+<input id="cep" placeholder="CEP">
+
+<input id="endereco" placeholder="Endereço">
+
+<input id="numero" placeholder="Número">
+
+<input id="bairro" placeholder="Bairro">
+
+<input id="cidade" placeholder="Cidade">
+
+<input id="estado" placeholder="Estado">
+
+<h2>Forma de Pagamento</h2>
+
+<label>
+
+<input type="radio" name="pagamento" value="pix" checked>
+
+PIX
+
+</label>
+
+<label>
+
+<input type="radio" name="pagamento" value="cartao">
+
+Cartão Presencial (TON)
+
+</label>
+
+<label>
+
+<input type="radio" name="pagamento" value="retirada">
+
+Retirar na Loja
+
+</label>
+
+</div>
+
+<div class="pedido">
+
+<h2>Resumo do Pedido</h2>
+
+<div id="itensPedido"></div>
+
+<h3>
+
+Total
+
+<span id="valorTotal">
+
+R$ 0,00
+
+</span>
+
+</h3>
+
+<button id="finalizar">
+
+Finalizar Pedido
+
+</button>
+
+</div>
+
+</main>
+
+<script src="js/checkout.js"></script>
+
+</body>
+</html>

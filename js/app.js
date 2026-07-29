@@ -1,30 +1,92 @@
 const lista = document.getElementById("listaProdutos");
 
-let carrinho = [];
+let carrinho =
+JSON.parse(localStorage.getItem("carrinho")) || [];
 
-async function carregarProdutos() {
+function atualizarCarrinho(){
 
-    const resposta = await fetch("data/produtos.json");
+    const contador =
+    document.getElementById("cartCount");
 
-    const produtos = await resposta.json();
+    if(contador){
 
-    lista.innerHTML = "";
+        contador.innerText=carrinho.length;
 
-    produtos.forEach(produto => {
+    }
 
-        lista.innerHTML += `
+}
+
+function salvarCarrinho(){
+
+    localStorage.setItem(
+
+        "carrinho",
+
+        JSON.stringify(carrinho)
+
+    );
+
+}
+
+function comprar(id){
+
+    const produtos =
+    JSON.parse(localStorage.getItem("produtos")) || [];
+
+    const produto =
+    produtos.find(p=>p.id==id);
+
+    if(!produto) return;
+
+    carrinho.push(produto);
+
+    salvarCarrinho();
+
+    atualizarCarrinho();
+
+    alert("Produto adicionado ao carrinho.");
+
+}
+
+function carregarProdutos(){
+
+    if(!lista) return;
+
+    const produtos =
+    JSON.parse(localStorage.getItem("produtos")) || [];
+
+    lista.innerHTML="";
+
+    if(produtos.length==0){
+
+        lista.innerHTML=`
+
+        <h2 style="text-align:center;width:100%;color:#d4af37;">
+
+        Nenhuma joia cadastrada.
+
+        </h2>
+
+        `;
+
+        return;
+
+    }
+
+    produtos.forEach(produto=>{
+
+        lista.innerHTML+=`
 
         <div class="produto">
 
-            <img src="${produto.imagem}" alt="${produto.nome}">
+            <img src="${produto.imagem}">
 
             <h3>${produto.nome}</h3>
 
             <p class="preco">
 
-                ${produto.preco.toLocaleString('pt-BR',{
-                    style:'currency',
-                    currency:'BRL'
+                R$ ${Number(produto.preco).toLocaleString('pt-BR',{
+                    minimumFractionDigits:2
                 })}
 
             </p>
@@ -41,50 +103,8 @@ async function carregarProdutos() {
 
     });
 
-    window.produtos = produtos;
-
 }
 
-function comprar(id){
-
-    const produto = window.produtos.find(p=>p.id===id);
-
-    carrinho.push(produto);
-
-    document.getElementById("cartCount").innerText = carrinho.length;
-
-    salvarCarrinho();
-
-    alert(produto.nome + " adicionado ao carrinho.");
-
-}
-
-function salvarCarrinho(){
-
-    localStorage.setItem(
-
-        "carrinho",
-
-        JSON.stringify(carrinho)
-
-    );
-
-}
-
-function carregarCarrinho(){
-
-    const dados = localStorage.getItem("carrinho");
-
-    if(dados){
-
-        carrinho = JSON.parse(dados);
-
-        document.getElementById("cartCount").innerText = carrinho.length;
-
-    }
-
-}
-
-carregarCarrinho();
+atualizarCarrinho();
 
 carregarProdutos();
