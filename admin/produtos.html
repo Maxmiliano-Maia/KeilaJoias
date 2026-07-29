@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Produtos</title>
+
+<link rel="stylesheet" href="../css/admin-produtos.css">
+
+</head>
+
+<body>
+
+<div class="layout">
+
+<aside>
+
+<h2>KEILA</h2>
+
+<ul>
+
+<li>Dashboard</li>
+<li class="ativo">Produtos</li>
+<li>Pedidos</li>
+<li>Clientes</li>
+<li>Relatórios</li>
+
+</ul>
+
+</aside>
+
+<main>
+
+<h1>Cadastrar Produto</h1>
+
+<form id="produtoForm">
+
+<div class="grid">
+
+<div>
+
+<label>Nome</label>
+
+<input
+id="nome"
+required>
+
+</div>
+
+<div>
+
+<label>SKU</label>
+
+<input
+id="sku">
+
+</div>
+
+<div>
+
+<label>Categoria</label>
+
+<select id="categoria">
+
+<option>Anéis</option>
+<option>Alianças</option>
+<option>Pulseiras</option>
+<option>Correntes</option>
+<option>Brincos</option>
+<option>Pingentes</option>
+
+</select>
+
+</div>
+
+<div>
+
+<label>Estoque</label>
+
+<input
+type="number"
+id="estoque">
+
+</div>
+
+<div>
+
+<label>Preço</label>
+
+<input
+type="number"
+step="0.01"
+id="preco">
+
+</div>
+
+<div>
+
+<label>Preço Promocional</label>
+
+<input
+type="number"
+step="0.01"
+id="promocao">
+
+</div>
+
+</div>
+
+<label>Descrição</label>
+
+<textarea
+id="descricao"></textarea>
+
+<label>Fotos</label>
+
+<input
+type="file"
+id="fotos"
+multiple
+accept="image/*">
+
+<div id="preview"></div>
+
+<div class="checks">
+
+<label>
+
+<input
+type="checkbox"
+id="destaque">
+
+Produto em Destaque
+
+</label>
+
+<label>
+
+<input
+type="checkbox"
+id="ativo"
+checked>
+
+Ativo
+
+</label>
+
+</div>
+
+<button>
+
+Salvar Produto
+
+</button>
+
+</form>
+
+<hr>
+
+<h2>Produtos</h2>
+
+<div id="listaProdutos"></div>
+
+</main>
+
+</div>
+
+<script src="../js/database.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/models.js"></script>
+<script src="../js/admin-produtos.js"></script>
+
+</body>
+
+</html>
